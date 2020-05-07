@@ -1,0 +1,13 @@
+@charset "utf-8"; 
+*{margin:0; padding:0; box-sizing:border-box; }
+        
+        
+/*simpleTabs_button*/
+.simpleTabs_button{list-style:none; font-size:0;}
+.simpleTabs_button li{display:inline-block; font-size:15px; padding:10px 20px; margin:0 5px 5px 0; border:1px solid #e9ecef; text-align:center; cursor:pointer; 
+                      -ms-user-select:none; -webkit-user-select:none; user-select:none;}
+.simpleTabs_button li.active{ background:#f1f3f5; }
+
+/*simpleTabs_contents*/
+[data-st-title]{min-height:100px; padding:10px; display:none; opacity:0; transition:opacity 0.4s;}
+[data-st-title].active{ opacity:1; }

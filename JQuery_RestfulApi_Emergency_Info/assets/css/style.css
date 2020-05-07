@@ -1,0 +1,43 @@
+body {
+    background-color: #F8F8FF;
+    font-family: Verdana,Arial, 'sans-serif';
+}
+
+.section {
+    min-height: 100vh;
+    padding: 86px 0;
+}
+.mat-container {
+    background-color: white;
+    border-radius: 20px;
+    padding: 30px;
+    margin: 15px;
+    width: 40%;
+    text-align: justify;
+    transition: all .4s ease-in-out;
+}
+.footer {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:  #474e5d;
+    color: white;
+    text-align: center;
+    padding-top:0.5px;
+    padding-bottom:0.5px;
+    margin-top: 40px;
+
+}
+
+#searchForm {
+    margin-left: 15px;
+}
+
+#searchForm {
+    width: 40%;
+}
+
+#searchResultTable {
+    width: 95%;
+}

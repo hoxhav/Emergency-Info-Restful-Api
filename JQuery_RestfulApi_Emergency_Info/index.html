@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>ESD</title>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <!-- Google Maps -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnwRek3V5mTZ_RI-mbyq47IW3FnPO-9ro&callback=myMap" async defer></script>
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="icon" href="assets/media/favicon/favicon.ico"/>
+        <link rel="stylesheet" href="assets/css/style.css">
+
+        <!-- JQuery Plugin 1 Datatables -->
+
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.18/datatables.min.js"></script>
+
+        <!-- JQuery Plugin 2 Dialog  -->
+
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+
+        <!-- JQuery Plugin 3 Tabs -->
+
+        <link rel="stylesheet" href="assets/Simpletabs/simpleTabs.css">
+        <script src="assets/Simpletabs/simpleTabs.min.js"></script>
+
+
+    </head>
+
+    <body>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" href="#"><img src="/assets/media/images/red-cross.png" width="30" height="30" class="d-inline-block align-top" alt=""> Emergency Service Directory</a>        
+
+        </nav>
+
+        <div class="section justify-content-center  d-flex flex-column align-items-center" id="faq-section">
+
+            <div class="mat-container">
+                <h2>FAQ About Emergency Service Directory</h2>
+                <h4>Note: This is a tool created for school purpose project.</h4>
+                <h4>How to use it?</h4>
+                <h5>This is an ESD developed by Vjori Hoxha. There is a form below which takes as input different fields depending on user wish. After that
+                    it populates a table with the required information. You can click the Name of the organization (also underlined to indicate that is clickable) and it will pop a dialog with more information</h5>
+                <h4>Can I use it multiple times?</h4>
+                <h5>Yes, but it will be okay if you would refresh the page once in a while ;)</h5>
+                <h4>Technologies used to develop this tool?</h4>
+                <h5>HTML5, CSS3, Bootstrap4, Javascript ES6, and JQuery</h5>
+            </div>
+        </div>
+
+        <form class="mx-auto" id="searchForm">
+            <fieldset><legend>Search Criteria</legend>
+                <div class="form-group">
+                    <label class="control-label">Organization Type</label>  
+                    <select class="form-control" id="orgTypeSelect" name="type"></select>
+                </div>
+                <div class="form-group">
+                    <p>
+                        <span  class="control-label" id="orgLabel">Organization Name</span>
+                        <input class="form-control" id="orgName" name="name" type="text"><em style="color: rgb(104, 129, 162);"> *can be partial - "vol" for "Volunteer"</em></p>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">State</label>
+                    <select class="form-control" id="stateSelect" name="state">
+                        <option value="">All States</option>
+                        <option value="AK">AK</option>
+
+                        <option value="AL">AL</option>
+                        <option value="AR">AR</option>
+                        <option value="AZ">AZ</option>
+                        <option value="CA">CA</option>
+                        <option value="CO">CO</option>
+                        <option value="CT">CT</option>
+
+                        <option value="DC">DC</option>
+                        <option value="DE">DE</option>
+                        <option value="FL">FL</option>
+                        <option value="GA">GA</option>
+                        <option value="HI">HI</option>
+                        <option value="IA">IA</option>
+
+                        <option value="ID">ID</option>
+                        <option value="IL">IL</option>
+                        <option value="IN">IN</option>
+                        <option value="KS">KS</option>
+                        <option value="KY">KY</option>
+                        <option value="LA">LA</option>
+
+                        <option value="MA">MA</option>
+                        <option value="MD">MD</option>
+                        <option value="ME">ME</option>
+                        <option value="MI">MI</option>
+                        <option value="MN">MN</option>
+                        <option value="MO">MO</option>
+
+                        <option value="MS">MS</option>
+                        <option value="MT">MT</option>
+                        <option value="NC">NC</option>
+                        <option value="ND">ND</option>
+                        <option value="NE">NE</option>
+                        <option value="NH">NH</option>
+
+                        <option value="NJ">NJ</option>
+                        <option value="NM">NM</option>
+                        <option value="NV">NV</option>
+                        <option value="NY" selected="selected">NY</option>
+                        <option value="OH">OH</option>
+                        <option value="OK">OK</option>
+
+                        <option value="OR">OR</option>
+                        <option value="PA">PA</option>
+                        <option value="RI">RI</option>
+                        <option value="SC">SC</option>
+                        <option value="SD">SD</option>
+                        <option value="TN">TN</option>
+
+                        <option value="TX">TX</option>
+                        <option value="UT">UT</option>
+                        <option value="VA">VA</option>
+                        <option value="VT">VT</option>
+                        <option value="WA">WA</option>
+                        <option value="WI">WI</option>
+
+                        <option value="WV">WV</option>
+                        <option value="WY">WY</option>
+
+                    </select>
+
+                    <select class="form-control" id="citySelect" name="town"></select>
+                </div>
+                <div class="form-group">
+                    <label class="control-label">County</label>
+                    <input class="form-control" id="county" type="text">
+                </div>
+                <div class="form-group">
+                    <label class="control-label">ZIP Code</label>
+
+                    <input  class="form-control" id="zip" type="text" name="zip">
+                </div>
+
+                <div style="margin:0 0 0 210px">
+                    <input class="btn btn-info" value="Show Results" id="searchButton" type="button">&nbsp;
+                    <input class="btn btn-warning" type="reset" value="Reset Form">
+                </div>
+            </fieldset>
+        </form>
+
+        <div class="mx-auto" id="searchResultTable"></div>
+        <div id="dialog" title="More Information About Selected Organization">
+            <div class="simpleTabs" id="tabs"></div>
+        </div>
+
+        <footer>
+            <div class="footer">
+                <p>&copy; Vjori Hoxha 2019</p>
+            </div>
+        </footer>
+        <script src="assets/js/customPlugin.js" type="text/javascript"></script>
+        <script src="assets/js/esd-search-ajax.js" type="text/javascript"></script>
+        <script src="assets/js/esd-getOrgData-ajax.js" type="text/javascript"></script>
+    </body>
+</html>
